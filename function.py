@@ -164,39 +164,13 @@ import os
 
 import usaddress
 
+
 def tag_address(address):
     try:
         parsed_address = usaddress.tag(address.lower())
-        # print(parsed_address)
-        # if "AddressNumber" in parsed_address[0].keys():
-        #    print(f"Now is the {parsed_address[0]['AddressNumber']}")
         return parsed_address
     except usaddress.RepeatedLabelError:
         return []
-
-
-# def parse_address(address):
-#     parsed_address = usaddress.parse(address.lower())
-#     street = ""
-#     zipcode = ""
-#     state = ""
-#     city = ""
-#     print(parsed_address)
-#     for loop, content in enumerate(parsed_address):
-#         print(content[1])
-#         if (
-#             content[1] != "StateName"
-#             and content[1] != "PlaceName"
-#             and content[1] != "ZipCode"
-#         ):
-#             street += content[0] + " "
-#         if content[1] == "StateName":
-#             state = content[0]
-#         if content[1] == "PlaceName":
-#             city = content[0]
-#         if content[1] == "ZipCode":
-#             zipcode = content[0]
-#     return [street, city, state, zipcode]
 
 
 def write_line(currentline):
@@ -217,7 +191,6 @@ with open("homeincidentalbusiness.csv", "r") as file_handle:
             city = ""
             state = ""
             zipcode = ""
-            # result = parse_address(contents[8])
             result = tag_address(contents[8])
             try:
                 if "AddressNumber" in result[0].keys():
