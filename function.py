@@ -160,7 +160,9 @@ import usaddress
 #         return False
 
 # print(f"is it s paladrone {palidrome('heflleh')}")
+import os
 
+import usaddress
 
 def tag_address(address):
     try:
@@ -173,28 +175,28 @@ def tag_address(address):
         return []
 
 
-def parse_address(address):
-    parsed_address = usaddress.parse(address.lower())
-    street = ""
-    zipcode = ""
-    state = ""
-    city = ""
-    print(parsed_address)
-    for loop, content in enumerate(parsed_address):
-        print(content[1])
-        if (
-            content[1] != "StateName"
-            and content[1] != "PlaceName"
-            and content[1] != "ZipCode"
-        ):
-            street += content[0] + " "
-        if content[1] == "StateName":
-            state = content[0]
-        if content[1] == "PlaceName":
-            city = content[0]
-        if content[1] == "ZipCode":
-            zipcode = content[0]
-    return [street, city, state, zipcode]
+# def parse_address(address):
+#     parsed_address = usaddress.parse(address.lower())
+#     street = ""
+#     zipcode = ""
+#     state = ""
+#     city = ""
+#     print(parsed_address)
+#     for loop, content in enumerate(parsed_address):
+#         print(content[1])
+#         if (
+#             content[1] != "StateName"
+#             and content[1] != "PlaceName"
+#             and content[1] != "ZipCode"
+#         ):
+#             street += content[0] + " "
+#         if content[1] == "StateName":
+#             state = content[0]
+#         if content[1] == "PlaceName":
+#             city = content[0]
+#         if content[1] == "ZipCode":
+#             zipcode = content[0]
+#     return [street, city, state, zipcode]
 
 
 def write_line(currentline):
@@ -245,13 +247,9 @@ with open("homeincidentalbusiness.csv", "r") as file_handle:
 
             print(street_address)
             print(result)
-            # print(result["PlaceName"])
             contents[3] = street_address
             contents[4] = city  # city
             contents[8] = state  # state
             contents[12] = zipcode  # zip
             thestr = "|".join(contents)
-            # print(contents)
-            # print(thestr)
-
             write_line(thestr)
