@@ -1,6 +1,5 @@
 import usaddress
 
-
 def tag_address(address):
     try:
         parsed_address = usaddress.tag(address.lower())
@@ -57,9 +56,9 @@ with open("homeincidentalbusiness.csv", "r") as file_handle:
 
             print(street_address)
             print(result)
-            contents[3] = street_address
-            contents[4] = city  # city
-            contents[8] = state  # state
-            contents[12] = zipcode  # zip
+            contents[3] = street_address.strip()
+            contents[4] = city.strip()  # city
+            contents[8] = state.upper().strip()  # state
+            contents[12] = zipcode.strip()  # zip
             thestr = "|".join(contents)
             write_line(thestr)
