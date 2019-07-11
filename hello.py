@@ -72,3 +72,24 @@ for loop in range(len(sentence)):
 print(f'{thelist}')        
 
 
+class Car:
+    def __init__(self, year,make,model):
+        self.year = year
+        self.make = make
+        self.model = model
+
+    def age(self, year):
+        self.year=2019
+        return self.year
+
+
+abc=Car("2019","Hyundai","Accent")
+
+print (abc.year)
+print (abc.make)
+print (abc.model)
+
+
+shoes=["Spizikes","Air force1","Curry2", "Melo5"]
+for shoe in shoes:
+    print(shoe)  
