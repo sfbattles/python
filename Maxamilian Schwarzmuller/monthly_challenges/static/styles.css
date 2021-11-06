@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+SC:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+SC:wght@300&family=Patrick+Hand&display=swap');
+
+html {
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Zen Tokyo Zoo', cursive; */
+    /* font-family: 'Big Shoulders Text', cursive; */
+    /* font-family: 'Indie Flower', cursive; */
+    /* font-family: 'Noto Sans SC', sans-serif; */
+    font-family: 'Patrick Hand', cursive;
+}
+
+body {
+    margin: 0;
+}
